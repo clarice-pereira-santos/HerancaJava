@@ -1,6 +1,12 @@
-# [Project name]
+# HerancaJava
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Ambiente para desenvolver e executar programas Java.
+
+## Java
+
+- Workflow `Java: executar main.java` executa `main.java` com o modo de arquivo-fonte do Java.
+- `javac main.java && java Main` — compila e executa o programa manualmente.
+- O workflow informa quando `main.java` estiver vazio; adicione seu código para executar o programa.
 
 ## Run & Operate
 
