@@ -1,0 +1,1 @@
+- [Java source launcher](java-source-launcher.md) — `java main.java` não compila automaticamente as outras fontes de pacotes locais.

@@ -1,4 +1,4 @@
-modules = ["nodejs-24", "java-graalvm22.3"]
+modules = ["nodejs-24", "java-graalvm22.3", "python-base-3.13"]
 
 [deployment]
 router = "application"
@@ -24,12 +24,12 @@ args = "Java: executar main.java"
 name = "Java: executar main.java"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "if [ ! -s main.java ]; then echo 'main.java esta vazio. Adicione codigo Java para executar.'; exit 0; fi; java main.java"
-
 [workflows.workflow.metadata]
 outputType = "console"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "if [ ! -s main.java ]; then echo 'main.java esta vazio. Adicione codigo Java para executar.'; exit 0; fi; mkdir -p out && javac -d out main.java $(find modelos -type f -name '*.java' -print) && java -cp out main"
 
 [agent]
 stack = "PNPM_WORKSPACE"

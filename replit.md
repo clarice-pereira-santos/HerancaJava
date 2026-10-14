@@ -4,8 +4,8 @@ Ambiente para desenvolver e executar programas Java.
 
 ## Java
 
-- Workflow `Java: executar main.java` executa `main.java` com o modo de arquivo-fonte do Java.
-- `javac main.java && java Main` — compila e executa o programa manualmente.
+- Workflow `Java: executar main.java` compila `main.java` e as classes em `modelos/` antes de executar.
+- `mkdir -p out && javac -d out main.java $(find modelos -name '*.java' -print) && java -cp out main` — compila e executa `main.java` com as classes do pacote `modelos`.
 - O workflow informa quando `main.java` estiver vazio; adicione seu código para executar o programa.
 
 ## Run & Operate
